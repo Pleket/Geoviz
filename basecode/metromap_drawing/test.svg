@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1500" height="1500" viewBox="-150.0 -150.0 300 300">
+<defs>
+</defs>
+<rect x="-40" y="-120" width="2" height="14" rx="1.0" ry="1.0" stroke="black" fill="none" transform="rotate(-108.43494882292202,-40,-120)" />
+<rect x="40" y="85" width="2" height="14" rx="1.0" ry="1.0" stroke="black" fill="none" transform="rotate(64.79887635452492,40,85)" />
+<path d="M-45.20702116675271,-117.96799173980382 L34.79297883324729,87.03200826019618" stroke="red" stroke-width="2" />
+<path d="M-42.41228830829753,-119.05861919676194 L37.58771169170247,85.94138080323806" stroke="green" stroke-width="2" />
+<path d="M-39.61755544984235,-120.14924665372006 L40.38244455015765,84.85075334627994" stroke="blue" stroke-width="2" />
+<path d="M-36.822822591387165,-121.23987411067817 L43.177177408612835,83.76012588932183" stroke="yellow" stroke-width="2" />
+<path d="M-34.02808973293199,-122.3305015676363 L45.97191026706801,82.6694984323637" stroke="purple" stroke-width="2" />
+</svg>
