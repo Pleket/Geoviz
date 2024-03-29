@@ -6,20 +6,42 @@ def draw_circle(x, y, lines, d, line_thickness=2, color='none'):
     r = (lines*line_thickness + lines - 1) / 2
     d.append(draw.Circle(x, y, r, stroke='black', fill=color))
 
-def draw_rectangle_station(x, y, lines_h, lines_v, d, line_thickness=2, color='none', center=(0,0)):
+def draw_rectangle_station(x, y, lines_h, lines_v, d, line_thickness=2, color='none'):
     r = line_thickness / 2
+    c_h = -0.5
+    c_v = -0.5
 
     if (lines_h == 0):
         lines_h = 1
+        c_h = 0.5
     if (lines_v == 0):
         lines_v = 1
+        c_v = 0.5
 
-    r_h = lines_h*line_thickness + lines_h - 1
-    r_v = lines_v*line_thickness + lines_v - 1
+    r_h = lines_h*line_thickness + lines_h - c_h
+    r_v = lines_v*line_thickness + lines_v - c_v
+
+    d.append(draw.Rectangle(x, y, r_v, r_h, rx = r, ry = r, stroke='black', fill=color, transform='translate({correction},0)'.format(correction=-((r_v - 1) / 2))))
+
+def draw_rectangle_station_rotate(x, y, lines_h, lines_v, d, line_thickness=2, color='none', center=(0,0)):
+    r = line_thickness / 2
+    c_h = -0.5
+    c_v = -0.5
+
+    if (lines_h == 0):
+        lines_h = 1
+        c_h = 0.5
+    if (lines_v == 0):
+        lines_v = 1
+        c_v = 0.5
+
+    r_h = lines_h*line_thickness + lines_h - c_h
+    r_v = lines_v*line_thickness + lines_v - c_v
 
     angle = Math.atan2(y - center[1], x - center[0]) * 180 / np.pi
 
-    d.append(draw.Rectangle(x, y, r_h, r_v, rx = r, ry = r, stroke='black', fill=color, transform = 'rotate({angle},{x},{y})'.format(angle=angle, x=x, y=y)))
+    d.append(draw.Rectangle(x, y, r_h, r_v, rx = r, ry = r, stroke='black', fill=color, transform='rotate({angle},{x},{y}) translate(0,{correction})'.format(angle=angle, x=x, y=y, correction=-((r_v - 1) / 2))))
+
 
 def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black']):
     a = (y_target - y_source) / abs(x_target - x_source)
@@ -47,9 +69,9 @@ dr = draw.Drawing(300, 300, origin='center')
 # draw_circle(40, 85, 5, dr, 2)
 # draw_lines(-40, -120, 40, 85, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
 
+draw_lines(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
 draw_rectangle_station(-40, -120, 0, 5, dr, 2)
-draw_rectangle_station(40, 85, 0, 5, dr, 2)
-draw_lines(-40, -120, 40, 85, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
+draw_rectangle_station(40, 120, 0, 5, dr, 2)
 
 dr.set_pixel_scale(5)
 #d.set_render_size(400, 200)
