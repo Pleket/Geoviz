@@ -43,19 +43,28 @@ def draw_rectangle_station_rotate(x, y, lines_h, lines_v, d, line_thickness=2, c
     d.append(draw.Rectangle(x, y, r_h, r_v, rx = r, ry = r, stroke='black', fill=color, transform='rotate({angle},{x},{y}) translate(0,{correction})'.format(angle=angle, x=x, y=y, correction=-((r_v - 1) / 2))))
 
 
-def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black']):
-    a = (y_target - y_source) / abs(x_target - x_source)
-    # b = y_source - a*x_source
-    a_p = -1/a
-    # b_p = y_source - a_p*x_source
-
-    thickness_x = np.sqrt(line_thickness**2 / (1 + a_p**2))
-    space_x = np.sqrt(1 / (1 + a_p**2))
+def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], rotate = False):
+    thickness_x = line_thickness
+    space_x = 1
     r = ((lines - 1) / 2) * (thickness_x + space_x)
     if (lines % 2 == 0):
         r = ((lines/2) - 1) * (thickness_x + space_x) + (thickness_x + space_x) / 2
-    # Compute the x value from the slope a
-    r = np.sqrt(r ** 2 / (1 + a_p**2))
+    a = 1
+    a_p = 0
+
+    if (x_target - x_source) != 0 and rotate:
+        a, a_p, thickness_x, space_x, r = calculate_rotation_xy(x_source, y_source, lines, center=(x_target, y_target), line_thickness=line_thickness)
+
+    # a = (y_target - y_source) / abs(x_target - x_source)
+    # a_p = -1/a
+
+    # thickness_x = np.sqrt(line_thickness**2 / (1 + a_p**2))
+    # space_x = np.sqrt(1 / (1 + a_p**2))
+    # r = ((lines - 1) / 2) * (thickness_x + space_x)
+    # if (lines % 2 == 0):
+    #     r = ((lines/2) - 1) * (thickness_x + space_x) + (thickness_x + space_x) / 2
+    # # Compute the x value from the slope a
+    # r = np.sqrt(r ** 2 / (1 + a_p**2))
 
     source_coords = [(x_source - r + i * (thickness_x + space_x), y_source - r * a_p + i * (thickness_x + space_x) * a_p) for i in range(int(lines))]
     target_coords = [(x_target - r + i * (thickness_x + space_x), y_target - r * a_p + i * (thickness_x + space_x) * a_p) for i in range(int(lines))]
@@ -66,7 +75,6 @@ def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=
 def draw_curve(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], center=(0,0)):
     if (x_source - center[0])**2 + (y_source - center[1])**2 != (x_target - center[0])**2 + (y_target - center[1])**2:
         raise ValueError("The source and target points must be at the same distance from the center!")
-
     a_source = (center[1] - y_source) / abs(center[0] - x_source)
     a_p_source = -1/a_source
 
@@ -92,14 +100,28 @@ def draw_curve(x_source, y_source, x_target, y_target, lines, d, line_thickness=
     for i in range(len(lines)):
         p = draw.Path(stroke=colors[i], stroke_width=line_thickness)
         d.append(p.M(source_coords[i][0], source_coords[i][1]).A(dists_center[i], dists_center[i], 0, 0, 1, target_coords[i][0], target_coords[i][1]))
-    
+
+def calculate_rotation_xy(x, y, lines, center=(0,0), line_thickness=2):
+    a = (center[1] - y) / abs(center[0] - x)
+    a_p = -1/a
+
+    thickness_x = np.sqrt(line_thickness**2 / (1 + a_p**2))
+    space_x = np.sqrt(1 / (1 + a_p**2))
+    r = ((lines - 1) / 2) * (thickness_x + space_x)
+    if (lines % 2 == 0):
+        r = ((lines/2) - 1) * (thickness_x + space_x) + (thickness_x + space_x) / 2
+    # Compute the x value from the slope a
+    r = np.sqrt(r ** 2 / (1 + a_p**2))
+
+    return a, a_p, thickness_x, space_x, r
+
 dr = draw.Drawing(300, 300, origin='center')
 
 # draw_circle(-40, -120, 5, dr, 2)
 # draw_circle(40, 85, 5, dr, 2)
 # draw_lines(-40, -120, 40, 85, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
 
-draw_lines(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
+draw_lines(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'], True)
 draw_rectangle_station(-40, -120, 0, 5, dr, 2)
 draw_rectangle_station(40, 120, 0, 5, dr, 2)
 

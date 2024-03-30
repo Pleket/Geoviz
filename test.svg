@@ -8,6 +8,6 @@
 <path d="M-39.707900211696916,-120.09736659610103 L40.292099788303084,119.90263340389897" stroke="blue" stroke-width="2" />
 <path d="M-36.861850317545375,-121.04604989415154 L43.138149682454625,118.95395010584846" stroke="yellow" stroke-width="2" />
 <path d="M-34.015800423393834,-121.99473319220206 L45.984199576606166,118.00526680779794" stroke="purple" stroke-width="2" />
-<rect x="-40" y="-120" width="15.5" height="2.5" rx="1.0" ry="1.0" stroke="black" fill="none" transform="rotate(-108.43494882292202,-40,-120) translate(-7.25,0)" />
-<rect x="40" y="120" width="15.5" height="2.5" rx="1.0" ry="1.0" stroke="black" fill="none" transform="rotate(71.56505117707799,40,120) translate(-7.25,0)" />
+<rect x="-40" y="-120" width="15.5" height="2.5" rx="1.0" ry="1.0" stroke="black" fill="none" transform="translate(-7.25,0)" />
+<rect x="40" y="120" width="15.5" height="2.5" rx="1.0" ry="1.0" stroke="black" fill="none" transform="translate(-7.25,0)" />
 </svg>
