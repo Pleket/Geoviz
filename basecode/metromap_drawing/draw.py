@@ -62,6 +62,36 @@ def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=
 
     for i in range(lines):
         d.append(draw.Line(source_coords[i][0], source_coords[i][1], target_coords[i][0], target_coords[i][1], stroke=colors[i], stroke_width=line_thickness))
+
+def draw_curve(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], center=(0,0)):
+    if (x_source - center[0])**2 + (y_source - center[1])**2 != (x_target - center[0])**2 + (y_target - center[1])**2:
+        raise ValueError("The source and target points must be at the same distance from the center!")
+
+    a_source = (center[1] - y_source) / abs(center[0] - x_source)
+    a_p_source = -1/a_source
+
+    thickness_x_source = np.sqrt(line_thickness**2 / (1 + a_source**2))
+    space_x_source = np.sqrt(1 / (1 + a_source**2))
+    r_source = ((lines - 1) / 2) * (thickness_x_source + space_x_source)
+    if (lines % 2 == 0):
+        r_source = ((lines/2) - 1) * (thickness_x_source + space_x_source) + (thickness_x_source + space_x_source) / 2
+
+    a_target = (center[1] - y_source) / abs(center[0] - x_source)
+    a_p_target = -1/a_source
+
+    thickness_x_target = np.sqrt(line_thickness**2 / (1 + a_target**2))
+    space_x_target = np.sqrt(1 / (1 + a_target**2))
+    r_target = ((lines - 1) / 2) * (thickness_x_target + space_x_target)
+    if (lines % 2 == 0):
+        r_target = ((lines/2) - 1) * (thickness_x_target + space_x_target) + (thickness_x_target + space_x_target) / 2
+
+    source_coords = [(x_source - r_source + i * (thickness_x_source + space_x_source), y_source - r_source * a_p_source + i * (thickness_x_source + space_x_source) * a_p_source) for i in range(int(lines))]
+    target_coords = [(x_target - r_target + i * (thickness_x_target + space_x_target), y_target - r_target * a_p_target + i * (thickness_x_target + space_x_target) * a_p_source) for i in range(int(lines))]
+    dists_center = [(np.sqrt((s[0] - center[0])**2 + (s[1] - center[1])**2)) for s in source_coords]
+
+    for i in range(len(lines)):
+        p = draw.Path(stroke=colors[i], stroke_width=line_thickness)
+        d.append(p.M(source_coords[i][0], source_coords[i][1]).A(dists_center[i], dists_center[i], 0, 0, 1, target_coords[i][0], target_coords[i][1]))
     
 dr = draw.Drawing(300, 300, origin='center')
 
