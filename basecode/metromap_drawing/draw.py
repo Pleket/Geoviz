@@ -3,10 +3,41 @@ import numpy as np
 import math as Math
 
 def draw_circle(x, y, lines, d, line_thickness=2, color='none'):
+    """
+    Draw a circle 'station' on the drawing object.
+
+    Parameters:
+    - x (float): The x-coordinate of the center of the circle.
+    - y (float): The y-coordinate of the center of the circle.
+    - lines (int): The number of lines to draw within the circle.
+    - d (draw.Drawing): The drawing object to add the circle to.
+    - line_thickness (int, optional): The thickness of the lines of the tracks coming in and going out. Default is 2.
+    - color (str, optional): The color of the circle. Default is 'none'.
+
+    Returns:
+    - None
+    """
+    
     r = (lines*line_thickness + lines - 1) / 2
     d.append(draw.Circle(x, y, r, stroke='black', fill=color))
 
 def draw_rectangle_station(x, y, lines_h, lines_v, d, line_thickness=2, color='none'):
+    """
+    Draw a rectangle 'station' on the drawing object with smooth corners.
+
+    Parameters:
+    - x (float): The x-coordinate of the top-left corner of the rectangle.
+    - y (float): The y-coordinate of the top-left corner of the rectangle.
+    - lines_h (int): The number of horizontal lines coming in/going out.
+    - lines_v (int): The number of vertical lines coming in/going out.
+    - d (draw.Drawing): The drawing object to add the rectangle to.
+    - line_thickness (int, optional): The thickness of the lines of the tracks coming in and going out. Default is 2.
+    - color (str, optional): The color of the rectangle. Default is 'none'.
+
+    Returns:
+    - None
+    """
+
     r = line_thickness / 2
     c_h = -0.5
     c_v = -0.5
@@ -24,6 +55,27 @@ def draw_rectangle_station(x, y, lines_h, lines_v, d, line_thickness=2, color='n
     d.append(draw.Rectangle(x, y, r_v, r_h, rx = r, ry = r, stroke='black', fill=color, transform='translate({correction},0)'.format(correction=-((r_v - 1) / 2))))
 
 def draw_rectangle_station_rotate(x, y, lines_h, lines_v, d, line_thickness=2, color='none', center=(0,0)):
+    """
+    Draw a rotated rectangle 'station' on the drawing object with smooth corners, where the rotation is determined by its position toward some center.
+
+    Parameters:
+    - x (float): The x-coordinate of the top-left corner of the rectangle.
+    - y (float): The y-coordinate of the top-left corner of the rectangle.
+    - lines_h (int): The number of horizontal lines coming in/going out.
+    - lines_v (int): The number of vertical lines coming in/going out.
+    - d (draw.Drawing): The drawing object to add the rectangle to.
+    - line_thickness (int, optional): The thickness of the lines of the tracks coming in and going out. Default is 2.
+    - color (str, optional): The color of the rectangle. Default is 'none'.
+    - center (tuple, optional): The coordinates of the center of the rotation. Default is (0,0)
+
+    Returns:
+    - None
+    """
+
+    if x - center[0] == 0:
+        draw_rectangle_station(x, y, lines_h, lines_v, d, line_thickness, color)
+        return
+
     r = line_thickness / 2
     c_h = -0.5
     c_v = -0.5
@@ -44,6 +96,24 @@ def draw_rectangle_station_rotate(x, y, lines_h, lines_v, d, line_thickness=2, c
 
 
 def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], rotate = False):
+    """
+    Draw a set of lines between two points on the drawing object.
+    
+    Parameters:
+    - x_source (float): The x-coordinate of the source station.
+    - y_source (float): The y-coordinate of the source station.
+    - x_target (float): The x-coordinate of the target station.
+    - y_target (float): The y-coordinate of the target station.
+    - lines (int): The number of lines to draw between the source and target points.
+    - d (draw.Drawing): The drawing object to add the lines to.
+    - line_thickness (int, optional): The thickness of the lines. Default is 2.
+    - colors (list, optional): The colors of the lines. Default is ['black'].
+    - rotate (bool, optional): Whether to rotate the lines's endpoints when the line direction is not horizontal or vertical. Default is False.
+    
+    Returns:
+    - None
+    """
+
     thickness_x = line_thickness
     space_x = 1
     r = ((lines - 1) / 2) * (thickness_x + space_x)
@@ -73,6 +143,24 @@ def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=
         d.append(draw.Line(source_coords[i][0], source_coords[i][1], target_coords[i][0], target_coords[i][1], stroke=colors[i], stroke_width=line_thickness))
 
 def draw_curve(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], center=(0,0)):
+    """
+    Draw a set of lines between two points on the drawing object, curved around a center pivot. 
+    
+    Parameters:
+    - x_source (float): The x-coordinate of the source station.
+    - y_source (float): The y-coordinate of the source station.
+    - x_target (float): The x-coordinate of the target station.
+    - y_target (float): The y-coordinate of the target station.
+    - lines (int): The number of lines to draw between the source and target points.
+    - d (draw.Drawing): The drawing object to add the lines to.
+    - line_thickness (int, optional): The thickness of the lines. Default is 2.
+    - colors (list, optional): The colors of the lines. Default is ['black'].
+    - center (tuple, optional): The coordinates of the center of the rotation. Default is (0,0)
+    
+    Returns:
+    - None
+    """
+
     if (x_source - center[0])**2 + (y_source - center[1])**2 != (x_target - center[0])**2 + (y_target - center[1])**2:
         raise ValueError("The source and target points must be at the same distance from the center!")
     a_source = (center[1] - y_source) / abs(center[0] - x_source)
@@ -102,6 +190,17 @@ def draw_curve(x_source, y_source, x_target, y_target, lines, d, line_thickness=
         d.append(p.M(source_coords[i][0], source_coords[i][1]).A(dists_center[i], dists_center[i], 0, 0, 1, target_coords[i][0], target_coords[i][1]))
 
 def calculate_rotation_xy(x, y, lines, center=(0,0), line_thickness=2):
+    """
+    Helper function to calculate the rotation of the lines's endpoints when the line direction is not horizontal or vertical.
+
+    Parameters:
+    - x (float): The x-coordinate of the source station.
+    - y (float): The y-coordinate of the source station.
+    - lines (int): The number of lines to be drawn. 
+    - center (tuple, optional): The coordinates of the center in which direction the lines should point. Default is (0,0).
+    - line_thickness (int, optional): The thickness of the lines. Default is 2.
+    """
+
     a = (center[1] - y) / abs(center[0] - x)
     a_p = -1/a
 
