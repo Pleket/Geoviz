@@ -190,7 +190,7 @@ def draw_curves(x_source, y_source, x_target, y_target, lines, d, line_thickness
     dists_center = [(np.sqrt((s[0] - center[0])**2 + (s[1] - center[1])**2)) for s in source_coords]
 
     for i in range(lines):
-        p = draw.Path(stroke=colors[i], stroke_width=line_thickness)
+        p = draw.Path(stroke=colors[i], stroke_width=line_thickness, fill='none')
         d.append(p.M(source_coords[i][0], source_coords[i][1]).A(dists_center[i], dists_center[i], 0, 0, 1, target_coords[i][0], target_coords[i][1]))
 
 def calculate_rotation_xy(x, y, lines, center=(0,0), line_thickness=2):
