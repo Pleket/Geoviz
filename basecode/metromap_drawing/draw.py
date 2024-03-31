@@ -162,26 +162,31 @@ def draw_curves(x_source, y_source, x_target, y_target, lines, d, line_thickness
 
     if (x_source - center[0])**2 + (y_source - center[1])**2 != (x_target - center[0])**2 + (y_target - center[1])**2:
         raise ValueError("The source and target points must be at the same distance from the center!")
-    a_source = (center[1] - y_source) / abs(center[0] - x_source)
-    a_p_source = -1/a_source
 
-    thickness_x_source = np.sqrt(line_thickness**2 / (1 + a_source**2))
-    space_x_source = np.sqrt(1 / (1 + a_source**2))
-    r_source = ((lines - 1) / 2) * (thickness_x_source + space_x_source)
+    thickness_y_source = line_thickness
+    space_y_source = line_thickness / 2
+    r_source = ((lines - 1) / 2) * (thickness_y_source + space_y_source)
     if (lines % 2 == 0):
-        r_source = ((lines/2) - 1) * (thickness_x_source + space_x_source) + (thickness_x_source + space_x_source) / 2
+        r = ((lines/2) - 1) * (thickness_y_source + space_y_source) + (thickness_y_source + space_y_source) / 2
+    a_source = 1
+    a_p_source = 0
 
-    a_target = (center[1] - y_source) / abs(center[0] - x_source)
-    a_p_target = -1/a_source
+    if (x_source - center[0]) != 0:
+        a_source, a_p_source, thickness_y_source, space_y_source, r_source = calculate_rotation_xy(x_source, y_source, lines, center=(x_target, y_target), line_thickness=line_thickness)
 
-    thickness_x_target = np.sqrt(line_thickness**2 / (1 + a_target**2))
-    space_x_target = np.sqrt(1 / (1 + a_target**2))
-    r_target = ((lines - 1) / 2) * (thickness_x_target + space_x_target)
+    thickness_y_target = line_thickness
+    space_y_target = line_thickness / 2
+    r_source = ((lines - 1) / 2) * (thickness_y_target + space_y_target)
     if (lines % 2 == 0):
-        r_target = ((lines/2) - 1) * (thickness_x_target + space_x_target) + (thickness_x_target + space_x_target) / 2
+        r = ((lines/2) - 1) * (thickness_y_target + space_y_target) + (thickness_y_target + space_y_target) / 2
+    a_target = 1
+    a_p_target = 0
 
-    source_coords = [(x_source - r_source + i * (thickness_x_source + space_x_source), y_source - r_source * a_p_source + i * (thickness_x_source + space_x_source) * a_p_source) for i in range(int(lines))]
-    target_coords = [(x_target - r_target + i * (thickness_x_target + space_x_target), y_target - r_target * a_p_target + i * (thickness_x_target + space_x_target) * a_p_source) for i in range(int(lines))]
+    if (x_target - center[0]) != 0:
+        a_target, a_p_target, thickness_y_target, space_y_target, r_target = calculate_rotation_xy(x_source, y_source, lines, center=(x_target, y_target), line_thickness=line_thickness)
+
+    source_coords = [(x_source + r_source * a_p_source - i * (thickness_y_source + space_y_source) * a_p_source, y_source - r_source + i * (thickness_y_source + space_y_source)) for i in range(int(lines))]
+    target_coords = [(x_target - r_target * a_p_target + i * (thickness_y_target + space_y_target) * a_p_target, y_target + r_target - i * (thickness_y_target + space_y_target)) for i in range(int(lines))]
     dists_center = [(np.sqrt((s[0] - center[0])**2 + (s[1] - center[1])**2)) for s in source_coords]
 
     for i in range(lines):
@@ -219,10 +224,10 @@ dr = draw.Drawing(300, 300, origin='center')
 # draw_circle(40, 85, 5, dr, 2)
 # draw_lines(-40, -120, 40, 85, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
 
-draw_lines(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'], True)
-# draw_curves(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
-draw_rectangle_station_rotate(-40, -120, 0, 5, dr, 2)
-draw_rectangle_station_rotate(40, 120, 0, 5, dr, 2)
+# draw_lines(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'], True)
+draw_curves(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
+draw_rectangle_station_rotate(-40, -120, 5, 0, dr, 2)
+draw_rectangle_station_rotate(40, 120, 5, 0, dr, 2)
 
 dr.set_pixel_scale(5)
 #d.set_render_size(400, 200)
