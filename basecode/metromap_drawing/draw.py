@@ -94,7 +94,6 @@ def draw_rectangle_station_rotate(x, y, lines_h, lines_v, d, line_thickness=2, c
 
     d.append(draw.Rectangle(x, y, r_h, r_v, rx = r, ry = r, stroke='black', fill=color, transform='rotate({angle},{x},{y}) translate(0,{correction})'.format(angle=angle, x=x, y=y, correction=-((r_v - 1) / 2))))
 
-
 def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], rotate = False):
     """
     Draw a set of lines between two points on the drawing object.
@@ -142,7 +141,7 @@ def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=
     for i in range(lines):
         d.append(draw.Line(source_coords[i][0], source_coords[i][1], target_coords[i][0], target_coords[i][1], stroke=colors[i], stroke_width=line_thickness))
 
-def draw_curve(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], center=(0,0)):
+def draw_curves(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], center=(0,0)):
     """
     Draw a set of lines between two points on the drawing object, curved around a center pivot. 
     
@@ -185,7 +184,7 @@ def draw_curve(x_source, y_source, x_target, y_target, lines, d, line_thickness=
     target_coords = [(x_target - r_target + i * (thickness_x_target + space_x_target), y_target - r_target * a_p_target + i * (thickness_x_target + space_x_target) * a_p_source) for i in range(int(lines))]
     dists_center = [(np.sqrt((s[0] - center[0])**2 + (s[1] - center[1])**2)) for s in source_coords]
 
-    for i in range(len(lines)):
+    for i in range(lines):
         p = draw.Path(stroke=colors[i], stroke_width=line_thickness)
         d.append(p.M(source_coords[i][0], source_coords[i][1]).A(dists_center[i], dists_center[i], 0, 0, 1, target_coords[i][0], target_coords[i][1]))
 
@@ -221,8 +220,9 @@ dr = draw.Drawing(300, 300, origin='center')
 # draw_lines(-40, -120, 40, 85, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
 
 draw_lines(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'], True)
-draw_rectangle_station(-40, -120, 0, 5, dr, 2)
-draw_rectangle_station(40, 120, 0, 5, dr, 2)
+# draw_curves(-40, -120, 40, 120, 5, dr, 2, ['red', 'green', 'blue', 'yellow', 'purple'])
+draw_rectangle_station_rotate(-40, -120, 0, 5, dr, 2)
+draw_rectangle_station_rotate(40, 120, 0, 5, dr, 2)
 
 dr.set_pixel_scale(5)
 #d.set_render_size(400, 200)
