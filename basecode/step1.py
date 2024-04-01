@@ -8,6 +8,8 @@ import time
 import geopandas as gpd
 from shapely.geometry import Point
 import matplotlib.pyplot as plt
+import json
+import os
 
 # Define file path to the DBF file
 file_path = './data/metro.dbf'
@@ -22,24 +24,41 @@ df['LINE'] = df['LINE'].str.split(r',\s*')
 df_exploded = df.explode('LINE').reset_index(drop=True)
 
 # Function to get latitude and longitude from address
+# Define the cache file name
+cache_file = 'address_cache.json'
+
 def get_lat_lon(address):
+    # Check if address is in cache
+    if os.path.exists(cache_file):
+        with open(cache_file, 'r') as f:
+            cache = json.load(f)
+            if address in cache:
+                return cache[address]
+    
+    # Address not in cache, perform API call
+    time.sleep(1)  # Sleep to respect usage policy
     url = "https://nominatim.openstreetmap.org/search"
     params = {"q": address, "format": "json"}
     response = requests.get(url, params=params)
-    if response.json():
-        data = response.json()[0]
-        return float(data['lat']), float(data['lon'])
-    else:
-        return None, None
+    if response.ok:
+        data = response.json()
+        if data:
+            lat = float(data[0]['lat'])
+            lon = float(data[0]['lon'])
+            # Cache the result
+            cache[address] = (lat, lon)
+            with open(cache_file, 'w') as f:
+                json.dump(cache, f)
+            return lat, lon
+    return None, None
 
 # Add 'Latitude' and 'Longitude' columns to DataFrame
-print('Downloading data...')
+print('Loading data...')
 for index, row in df_exploded.iterrows():
     lat, lon = get_lat_lon(row['ADDRESS'])
     df_exploded.at[index, 'Latitude'] = lat
     df_exploded.at[index, 'Longitude'] = lon
-    time.sleep(1)  # Sleep to respect usage policy
-print('Done downloading!')
+print('Done loading!')
 
 # Create GeoDataFrame with coordinates
 gdf = gpd.GeoDataFrame(df_exploded, geometry=gpd.points_from_xy(df_exploded.Longitude, df_exploded.Latitude))
@@ -53,14 +72,16 @@ line_colors = {'blue': 'blue', 'orange': 'orange', 'silver': '#C0C0C0', 'red': '
 
 # Clean and process data
 initial_row_count = len(df_exploded)
-df_exploded_cleaned = df_exploded.dropna(subset=['ADDRESS', 'LINE'])
+df_exploded_cleaned = df_exploded.dropna(subset=['ADDRESS', 'LINE', 'Latitude', 'Longitude'])
 final_row_count = len(df_exploded_cleaned)
+
+
 rows_removed = initial_row_count - final_row_count
 
 # Generate random visitor counts
 np.random.seed(42)
-df_exploded_cleaned['VISITORS'] = np.random.lognormal(mean=np.log(10000), sigma=1, size=final_row_count)
-df_exploded_cleaned['VISITORS'] = df_exploded_cleaned['VISITORS'].round().astype(int)
+df_exploded_cleaned.loc[:, 'VISITORS'] = np.random.lognormal(mean=np.log(10000), sigma=1, size=final_row_count)
+df_exploded_cleaned.loc[:, 'VISITORS'] = df_exploded_cleaned['VISITORS'].round().astype(int)
 
 # Drop duplicates and save to CSV
 df_exploded_unique = df_exploded_cleaned.drop_duplicates(subset=['LINE', 'Longitude', 'Latitude'])

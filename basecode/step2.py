@@ -81,6 +81,16 @@ for line_color, stations in ordered_lines:
     line, = ax.plot([coord[0] for coord in station_coordinates], [coord[1] for coord in station_coordinates], color=line_colors[line_color], linewidth=2, label=line_color.capitalize() + " Line")
     legend_lines.append(line)
 
+# Plot stations and their names next to the points, snapped to the grid
+for index, (station, coordinates) in enumerate(sorted_stations):
+    if not any(math.isnan(coord) for coord in coordinates):
+        snapped_coordinates = snap_to_grid(coordinates, min_coor, max_coor)
+        ax.scatter(snapped_coordinates[0], snapped_coordinates[1], color=line_colors[line_color], s=visitors/100)
+        ax.text(snapped_coordinates[0], snapped_coordinates[1], station, fontsize=8, ha='right', va='center', color='black')
+        # Print snapped coordinates
+        print(f"Station: {station}, Snapped Coordinates: {snapped_coordinates}")
+
+
 # Add legend for lines
 ax.legend(handles=legend_lines)
 
