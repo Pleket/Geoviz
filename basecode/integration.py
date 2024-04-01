@@ -1,22 +1,13 @@
 # Import necessary functions from draw.py and step2.py
 from metromap_drawing.draw import draw_lines, draw_rectangle_station
 from step2 import line_station_map, df_exploded_unique, visitors, snap_to_grid
+from data_vars import line_colors
 import math
 import numpy as np
 
-# Define the line colors dictionary
-line_colors = {
-    'blue': 'blue',
-    'orange': 'orange',
-    'silver': '#C0C0C0',  # Hex code for silver
-    'red': 'red',
-    'green': 'green',
-    'yellow': 'yellow'
-}
 
 # Create a list to store the ordered lines
 ordered_lines = []
-
 
 # Iterate over the provided station lists and append the line name to ordered_lines
 for line, stations in line_station_map.items():

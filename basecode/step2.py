@@ -2,15 +2,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 from step1 import line_station_map, df_exploded_unique, visitors
-
-line_colors = {
-    'blue': 'blue',
-    'orange': 'orange',
-    'silver': '#C0C0C0',  # Hex code for silver
-    'red': 'red',
-    'green': 'green',
-    'yellow': 'yellow'
-}
+from data_vars import line_colors
 
 # Create a list to store the ordered lines
 ordered_lines = []

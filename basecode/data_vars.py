@@ -232,3 +232,12 @@ line_station_map = {
     'green': green_line_stations,
     'yellow': yellow_line_stations
 }
+
+line_colors = {
+    'blue': 'blue',
+    'orange': 'orange',
+    'silver': '#C0C0C0',  # Hex code for silver
+    'red': 'red',
+    'green': 'green',
+    'yellow': 'yellow'
+}
