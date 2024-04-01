@@ -80,7 +80,7 @@ for index, (station, coordinates) in enumerate(sorted_stations):
         ax.scatter(snapped_coordinates[0], snapped_coordinates[1], color=line_colors[line_color], s=visitors/100)
         ax.text(snapped_coordinates[0], snapped_coordinates[1], station, fontsize=8, ha='right', va='center', color='black')
         # Print snapped coordinates
-        print(f"Station: {station}, Snapped Coordinates: {snapped_coordinates}")
+        # print(f"Station: {station}, Snapped Coordinates: {snapped_coordinates}")
 
 
 # Add legend for lines

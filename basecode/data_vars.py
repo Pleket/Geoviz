@@ -241,3 +241,9 @@ line_colors = {
     'green': 'green',
     'yellow': 'yellow'
 }
+
+# Create a dictionary to map stations to their corresponding lines
+station_lines = {}
+for line, stations in line_station_map.items():
+    for station in stations:
+        station_lines.setdefault(station, []).append(line)
