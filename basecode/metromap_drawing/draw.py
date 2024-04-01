@@ -52,7 +52,7 @@ def draw_rectangle_station(x, y, lines_h, lines_v, d, line_thickness=2, color='n
     r_h = lines_h*line_thickness + lines_h - c_h
     r_v = lines_v*line_thickness + lines_v - c_v
 
-    d.append(draw.Rectangle(x, y, r_v, r_h, rx = r, ry = r, stroke='black', fill=color, transform='translate({correction},0)'.format(correction=-((r_v - 1) / 2))))
+    d.append(draw.Rectangle(x, y, r_v, r_h, rx = r, ry = r, stroke='black', fill=color, transform='translate({correction_x},{correction_y})'.format(correction_x=-((r_v - 1) / 2), correction_y=-((r_h - 1) / 2))))
 
 def draw_rectangle_station_rotate(x, y, lines_h, lines_v, d, line_thickness=2, color='none', center=(0,0)):
     """
@@ -92,7 +92,7 @@ def draw_rectangle_station_rotate(x, y, lines_h, lines_v, d, line_thickness=2, c
 
     angle = Math.atan2(y - center[1], x - center[0]) * 180 / np.pi
 
-    d.append(draw.Rectangle(x, y, r_h, r_v, rx = r, ry = r, stroke='black', fill=color, transform='rotate({angle},{x},{y}) translate(0,{correction})'.format(angle=angle, x=x, y=y, correction=-((r_v - 1) / 2))))
+    d.append(draw.Rectangle(x, y, r_h, r_v, rx = r, ry = r, stroke='black', fill=color, transform='rotate({angle},{x},{y}) translate({correction_x},{correction_y})'.format(angle=angle, x=x, y=y, correction_x=-((r_h - 1) / 2), correction_y=-((r_v - 1) / 2))))
 
 def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=2, colors=['black'], rotate = False):
     """
@@ -123,17 +123,6 @@ def draw_lines(x_source, y_source, x_target, y_target, lines, d, line_thickness=
 
     if (x_target - x_source) != 0 and rotate:
         a, a_p, thickness_x, space_x, r = calculate_rotation_xy(x_source, y_source, lines, center=(x_target, y_target), line_thickness=line_thickness)
-
-    # a = (y_target - y_source) / abs(x_target - x_source)
-    # a_p = -1/a
-
-    # thickness_x = np.sqrt(line_thickness**2 / (1 + a_p**2))
-    # space_x = np.sqrt(1 / (1 + a_p**2))
-    # r = ((lines - 1) / 2) * (thickness_x + space_x)
-    # if (lines % 2 == 0):
-    #     r = ((lines/2) - 1) * (thickness_x + space_x) + (thickness_x + space_x) / 2
-    # # Compute the x value from the slope a
-    # r = np.sqrt(r ** 2 / (1 + a_p**2))
 
     source_coords = [(x_source - r + i * (thickness_x + space_x), y_source - r * a_p + i * (thickness_x + space_x) * a_p) for i in range(int(lines))]
     target_coords = [(x_target - r + i * (thickness_x + space_x), y_target - r * a_p + i * (thickness_x + space_x) * a_p) for i in range(int(lines))]
