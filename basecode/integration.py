@@ -6,7 +6,6 @@ import math
 import numpy as np
 import drawsvg as draw
 
-
 # Create a list to store the ordered lines
 ordered_lines = []
 
@@ -25,46 +24,75 @@ for line_color, stations in line_station_map.items():
 min_coor = np.nanmin(all_coordinates, axis=0)
 max_coor = np.nanmax(all_coordinates, axis=0)
 
+# Determine the scaling factor based on the ratio between the drawing size and the grid size
+scaling_factor = 100  # Assuming 300 is the size of the drawing
+
 # Create SVG drawing
 dr = draw.Drawing(300, 300, origin='center')
 
-# Draw metro lines and stations
+# Draw metro lines
 for line_color, stations in ordered_lines:
     station_coordinates = []
-    for station_name in stations:  # Rename the variable to avoid conflicts
-        station_data = df_exploded_unique[df_exploded_unique['NAME'] == station_name]  # Rename to station_name
+    for station_name in stations:  
+        station_data = df_exploded_unique[df_exploded_unique['NAME'] == station_name]  
+        if not station_data.empty:
+            station_coordinates.append((station_data.iloc[0]['Longitude'], station_data.iloc[0]['Latitude']))
+    
+    # Scale up and snap the coordinates to the grid
+    snapped_stations = [snap_to_grid((x , y), min_coor, max_coor) for x, y in station_coordinates]
+    print(snapped_stations)
+    scaled_stations = [(x * scaling_factor, y * scaling_factor) for x, y in snapped_stations]
+    print(scaled_stations)
+
+    # Draw the lines
+    for i in range(len(scaled_stations) - 1):
+        station_curr = scaled_stations[i]
+        station_next = scaled_stations[i + 1]
+        # print("Stations:", station_curr, station_next)  # Print stations to check their coordinates
+        lines_curr = station_lines.get(station_coordinates[i], [])  # Use i instead of i + 1
+        lines_next = station_lines.get(station_coordinates[i + 1], [])  # Use i + 1 instead of i
+        # print("Lines for current station:", lines_curr)
+        # print("Lines for next station:", lines_next)
+        num_lines_curr = len(lines_curr)
+        num_lines_next = len(lines_next)
+        lines = max(num_lines_curr, num_lines_next)
+        # print("Num lines for current station:", num_lines_curr)
+        # print("Num lines for next station:", num_lines_next)
+        # print("Lines:", lines)
+
+        print(station_curr, station_next, num_lines_curr, num_lines_next)
+        # print(num_lines_curr, num_lines_next)
+        color = line_colors[line_color]
+        if station_curr[0] < station_next[0]:
+            rotate = 90
+        elif station_curr[0] > station_next[0]:
+            rotate = -90
+        else:
+            rotate = 0
+        # print('Lines: ',station_curr[0], station_curr[1], station_next[0], station_next[1], lines, dr, 2, [color] * lines, rotate)
+        draw_lines(station_curr[0], station_curr[1], station_next[0], station_next[1], lines, dr, 2, [color] * lines, rotate)
+
+# Draw metro stations
+for line_color, stations in ordered_lines:
+    station_coordinates = []
+    for station_name in stations:
+        station_data = df_exploded_unique[df_exploded_unique['NAME'] == station_name]
         if not station_data.empty:
             station_coordinates.append((station_data.iloc[0]['Longitude'], station_data.iloc[0]['Latitude']))
 
-    # Sort the stations based on their order in the provided list
-    sorted_stations = sorted(station_coordinates, key=lambda x: stations.index(df_exploded_unique[df_exploded_unique['Longitude'] == x[0]]['NAME'].values[0]))
-
-    # Plot stations and their names next to the points, snapped to the grid
-    for index, coordinates in enumerate(sorted_stations):
-        if not any(math.isnan(coord) for coord in coordinates):
-            snapped_coordinates = snap_to_grid(coordinates, min_coor, max_coor)
-            
-            # Determine the number of lines going through the station
-            num_lines = len(station_lines[station_name])  # Use station_name here
-            
-            # Set the number of horizontal and vertical lines based on the number of lines going through the station
-            lines_h = num_lines
-            lines_v = 0 if num_lines > 0 else 5  # Set lines_v to 0 if there are lines going through, otherwise set to 5
-            
-            # Set the color based on the line color
-            color = line_colors[line_color]
-            
-            # Draw the station rectangle dynamically
-            draw_rectangle_station(snapped_coordinates[0], snapped_coordinates[1], lines_h, lines_v, dr, 2, color)
-
-
-
-    # Connect points of the same color with lines
-    for i in range(len(sorted_stations) - 1):
-        if not any(math.isnan(coord) for coord in sorted_stations[i]) and not any(math.isnan(coord) for coord in sorted_stations[i+1]):
-            draw_lines(sorted_stations[i][0], sorted_stations[i][1], sorted_stations[i+1][0], sorted_stations[i+1][1], 5, dr, 2, [line_colors[line_color]] * 5)
+    # Scale up and snap the coordinates to the grid
+    scaled_stations = [snap_to_grid((x * scaling_factor, y * scaling_factor), min_coor * scaling_factor, max_coor * scaling_factor) for x, y in station_coordinates]
+    
+    # Draw the stations
+    for coordinates in scaled_stations:
+        num_lines = len(station_lines.get(coordinates, []))
+        #TODO: Fix the lines_h and lines_v
+        lines_h = num_lines
+        lines_v = num_lines
+        color = line_colors[line_color]
+        # print('Stations: ',coordinates[0], coordinates[1], lines_h, lines_v, dr)
+        draw_rectangle_station(coordinates[0], coordinates[1], lines_h, lines_v, dr, line_thickness=2, color=color)
 
 # Set pixel scale and save SVG
 dr.set_pixel_scale(5)
 dr.save_svg('metro_map.svg')
-
