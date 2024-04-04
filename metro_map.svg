@@ -3,117 +3,117 @@
      width="1500" height="1500" viewBox="0 0 300 300">
 <defs>
 </defs>
-<path d="M90.5,5.0 L119.5,5.0" stroke="blue" stroke-width="2" />
-<path d="M93.5,5.0 L122.5,5.0" stroke="blue" stroke-width="2" />
-<path d="M120.7,5.6 L178.7,34.6" stroke="blue" stroke-width="2" />
-<path d="M122.04164078649988,2.916718427000252 L180.04164078649987,31.916718427000255" stroke="blue" stroke-width="2" />
-<path d="M263.75,94.25 L292.75,123.25" stroke="blue" stroke-width="2" />
-<path d="M265.87132034355966,92.12867965644035 L294.87132034355966,121.12867965644035" stroke="silver" stroke-width="2" />
-<path d="M267.99264068711926,90.00735931288071 L296.99264068711926,119.00735931288071" stroke="blue" stroke-width="2" />
-<path d="M270.1139610306789,87.88603896932108 L299.1139610306789,116.88603896932108" stroke="silver" stroke-width="2" />
-<path d="M148.5,92.0 L148.5,92.0" stroke="silver" stroke-width="2" />
-<path d="M151.5,92.0 L151.5,92.0" stroke="silver" stroke-width="2" />
-<path d="M235.5,92.0 L264.5,92.0" stroke="silver" stroke-width="2" />
-<path d="M238.5,92.0 L267.5,92.0" stroke="silver" stroke-width="2" />
-<path d="M264.5,92.0 L264.5,92.0" stroke="silver" stroke-width="2" />
-<path d="M267.5,92.0 L267.5,92.0" stroke="silver" stroke-width="2" />
-<path d="M263.75,94.25 L292.75,123.25" stroke="blue" stroke-width="2" />
-<path d="M265.87132034355966,92.12867965644035 L294.87132034355966,121.12867965644035" stroke="silver" stroke-width="2" />
-<path d="M267.99264068711926,90.00735931288071 L296.99264068711926,119.00735931288071" stroke="blue" stroke-width="2" />
-<path d="M270.1139610306789,87.88603896932108 L299.1139610306789,116.88603896932108" stroke="silver" stroke-width="2" />
-<path d="M206.5,150.0 L206.5,179.0" stroke="red" stroke-width="2" />
-<path d="M209.5,150.0 L209.5,179.0" stroke="red" stroke-width="2" />
-<path d="M177.5,237.0 L177.5,266.0" stroke="red" stroke-width="2" />
-<path d="M180.5,237.0 L180.5,266.0" stroke="red" stroke-width="2" />
-<path d="M206.5,92.0 L206.5,63.0" stroke="green" stroke-width="2" />
-<path d="M209.5,92.0 L209.5,63.0" stroke="green" stroke-width="2" />
-<path d="M178.25,33.25 L149.25,4.25" stroke="yellow" stroke-width="2" />
-<path d="M180.37132034355963,35.371320343559645 L151.37132034355963,6.371320343559643" stroke="yellow" stroke-width="2" />
-<rect x="92.0" y="5.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="121.0" y="5.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="34.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="34.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="63.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="266.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="295.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="295.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
-<rect x="63.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="237.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="237.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="266.0" y="150.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
-<rect x="5.0" y="150.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="63.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="237.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="266.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="266.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="295.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="295.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
-<rect x="121.0" y="295.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="121.0" y="266.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="237.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="208.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="179.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="150.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="121.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="150.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="179.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="208.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="237.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="266.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
-<rect x="266.0" y="237.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="179.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="179.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="150.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="92.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="63.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="237.0" y="63.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="237.0" y="63.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
-<rect x="208.0" y="179.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="150.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="63.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="34.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
-<rect x="179.0" y="34.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
-<rect x="150.0" y="5.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
+<path d="M90.5,305.0 L119.5,305.0" stroke="blue" stroke-width="2" />
+<path d="M93.5,305.0 L122.5,305.0" stroke="blue" stroke-width="2" />
+<path d="M120.7,304.4 L178.7,275.4" stroke="blue" stroke-width="2" />
+<path d="M122.04164078649988,307.08328157299974 L180.04164078649987,278.08328157299974" stroke="blue" stroke-width="2" />
+<path d="M263.75,215.75 L292.75,186.75" stroke="blue" stroke-width="2" />
+<path d="M265.87132034355966,217.87132034355963 L294.87132034355966,188.87132034355963" stroke="silver" stroke-width="2" />
+<path d="M267.99264068711926,219.9926406871193 L296.99264068711926,190.9926406871193" stroke="blue" stroke-width="2" />
+<path d="M270.1139610306789,222.11396103067892 L299.1139610306789,193.11396103067892" stroke="silver" stroke-width="2" />
+<path d="M148.5,218.0 L148.5,218.0" stroke="silver" stroke-width="2" />
+<path d="M151.5,218.0 L151.5,218.0" stroke="silver" stroke-width="2" />
+<path d="M235.5,218.0 L264.5,218.0" stroke="silver" stroke-width="2" />
+<path d="M238.5,218.0 L267.5,218.0" stroke="silver" stroke-width="2" />
+<path d="M264.5,218.0 L264.5,218.0" stroke="silver" stroke-width="2" />
+<path d="M267.5,218.0 L267.5,218.0" stroke="silver" stroke-width="2" />
+<path d="M263.75,215.75 L292.75,186.75" stroke="blue" stroke-width="2" />
+<path d="M265.87132034355966,217.87132034355963 L294.87132034355966,188.87132034355963" stroke="silver" stroke-width="2" />
+<path d="M267.99264068711926,219.9926406871193 L296.99264068711926,190.9926406871193" stroke="blue" stroke-width="2" />
+<path d="M270.1139610306789,222.11396103067892 L299.1139610306789,193.11396103067892" stroke="silver" stroke-width="2" />
+<path d="M206.5,160.0 L206.5,131.0" stroke="red" stroke-width="2" />
+<path d="M209.5,160.0 L209.5,131.0" stroke="red" stroke-width="2" />
+<path d="M177.5,73.0 L177.5,44.0" stroke="red" stroke-width="2" />
+<path d="M180.5,73.0 L180.5,44.0" stroke="red" stroke-width="2" />
+<path d="M206.5,218.0 L206.5,247.0" stroke="green" stroke-width="2" />
+<path d="M209.5,218.0 L209.5,247.0" stroke="green" stroke-width="2" />
+<path d="M178.25,276.75 L149.25,305.75" stroke="yellow" stroke-width="2" />
+<path d="M180.37132034355963,274.62867965644034 L151.37132034355963,303.62867965644034" stroke="yellow" stroke-width="2" />
+<rect x="92.0" y="305.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="121.0" y="305.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="276.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="276.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="247.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="266.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="295.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="295.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="blue" transform="translate(-8.75,-8.75)" />
+<rect x="63.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="237.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="237.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="266.0" y="160.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="orange" transform="translate(-8.75,-8.75)" />
+<rect x="5.0" y="160.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="63.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="237.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="266.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="266.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="295.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="295.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="#C0C0C0" transform="translate(-8.75,-8.75)" />
+<rect x="121.0" y="15.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="121.0" y="44.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="73.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="102.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="131.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="160.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="189.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="160.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="131.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="102.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="73.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="44.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="red" transform="translate(-8.75,-8.75)" />
+<rect x="266.0" y="73.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="131.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="131.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="160.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="218.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="247.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="237.0" y="247.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="237.0" y="247.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="green" transform="translate(-8.75,-8.75)" />
+<rect x="208.0" y="131.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="160.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="247.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="276.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
+<rect x="179.0" y="276.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
+<rect x="150.0" y="305.0" width="18.5" height="18.5" rx="1.0" ry="1.0" stroke="black" fill="yellow" transform="translate(-8.75,-8.75)" />
 </svg>

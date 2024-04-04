@@ -96,7 +96,7 @@ for line_color, stations in ordered_lines:
         else:
             rotate = 0
         # print(int(station_curr[0]+5), int(station_curr[1]+5), int(station_next[0]+5), int(station_next[1]+5), lines, dr, 2, color, rotate)
-        draw_lines(int(station_curr[0]+5), int(300-station_curr[1]+5), int(station_next[0]+5), int(300-station_next[1]+5), 1, dr, 2, [color], rotate)
+        draw_lines(int(station_curr[0]+5), int(300-station_curr[1]+5), int(station_next[0]+5), int(300-station_next[1]+5), num_lines[0], dr, 2, num_lines[1], rotate)
 
 
 
