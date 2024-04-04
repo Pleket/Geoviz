@@ -96,7 +96,7 @@ for line_color, stations in ordered_lines:
         else:
             rotate = 0
         # print(int(station_curr[0]+5), int(station_curr[1]+5), int(station_next[0]+5), int(station_next[1]+5), lines, dr, 2, color, rotate)
-        draw_lines(int(station_curr[0]+5), int(station_curr[1]+5), int(station_next[0]+5), int(station_next[1]+5), num_lines[0], dr, 2, num_lines[1], rotate)
+        draw_lines(int(station_curr[0]+5), int(300-station_curr[1]+5), int(station_next[0]+5), int(300-station_next[1]+5), 1, dr, 2, [color], rotate)
 
 
 
@@ -123,7 +123,7 @@ for line_color, stations in ordered_lines:
         lines_v = num_lines
         color = line_colors[line_color]
         # print('Stations: ',coordinates[0], coordinates[1], lines_h, lines_v, dr)
-        draw_rectangle_station(coordinates[0]+5, coordinates[1]+5, lines_h, lines_v, dr, line_thickness=2, color=color)
+        draw_rectangle_station(coordinates[0]+5, 300-coordinates[1]+5, lines_h, lines_v, dr, line_thickness=2, color=color)
 
 # Set pixel scale and save SVG
 dr.set_pixel_scale(5)
