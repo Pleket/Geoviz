@@ -28,7 +28,7 @@ max_coor = np.nanmax(list(all_coordinates.values()), axis=0)
 scaling_factor = 300 // grid_size - 1  # Assuming 300 is the size of the drawing
 
 # Create SVG drawing
-dr = draw.Drawing(300, 300, origin='top-left')
+dr = draw.Drawing(350, 350, origin='top-left')
 
 def lines_between_stations():
     lines_dict = {}
@@ -65,7 +65,7 @@ for line_color, stations in ordered_lines:
     
     # Scale up and snap the coordinates to the grid
     snapped_stations = [snap_to_grid((x , y), min_coor, max_coor) for x, y in station_coordinates]
-    scaled_stations = [(x * scaling_factor, y * scaling_factor) for x, y in snapped_stations]
+    scaled_stations = [(x * scaling_factor,y * scaling_factor) for x, y in snapped_stations]
 
     # Draw the lines
     for i in range(len(scaled_stations) - 1):
@@ -123,6 +123,7 @@ for line_color, stations in ordered_lines:
         lines_v = num_lines
         color = line_colors[line_color]
         # print('Stations: ',coordinates[0], coordinates[1], lines_h, lines_v, dr)
+        draw_rectangle_station(coordinates[0]+5, 300-coordinates[1]+5, lines_h, lines_v, dr, line_thickness=2, color=color)
         draw_rectangle_station(coordinates[0]+5, 300-coordinates[1]+5, lines_h, lines_v, dr, line_thickness=2, color=color)
 
 # Set pixel scale and save SVG
