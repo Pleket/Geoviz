@@ -11,6 +11,9 @@ class Station:
     def set_lines(self, lines):
         self.lines = lines
     
+    def get_lines(self):
+        return self.lines
+    
     def get_name(self):
         return self.name
     
