@@ -3,12 +3,16 @@ class MetroLine:
         self.color = color
         self.lines = []
         self.turns= []
+        self.i = 0
     
-    def add_station(self, line):
+    def add_line(self, line):
+        line.set_index(self.i)
         self.lines.append(line)
+        self.i += 1
     
     def set_lines(self, lines):
         self.lines = lines
+        self.i = len(lines)
     
     def get_lines(self):
         return self.lines
@@ -54,3 +58,9 @@ class Line:
             if (self.coords[i+1][1]-self.coords[i][1])/((self.coords[i+1][0]-self.coords[i][0])) != (self.coords[i+2][1]-self.coords[i+1][1])/((self.coords[i+2][0]-self.coords[i+1][0])):
                 turns.append(i)
         return turns
+    
+    def set_index(self, i):
+        self.index = i
+    
+    def get_id(self):
+        return self.color + str(self.index)

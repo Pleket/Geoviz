@@ -1,4 +1,5 @@
 from enum import Enum
+import pyomo as pyo
 
 
 def snap_grid(bounding_box, square_size, metroline):
@@ -71,3 +72,14 @@ class Corner(Enum):
     TOP_RIGHT = (1,0)
     BOTTOM_LEFT = (0,1)
     BOTTOM_RIGHT = (1,1)
+
+
+def define_ILP(grid_size, square_size, metroline):
+    model = pyo.ConcreteModel()
+
+    station_vars = [(v, i, j) for v in metroline.get_lines().station1.get_name() for i in range(grid_size / square_size) for j in range(grid_size / square_size)]
+    model.S = pyo.Set(dim=3, initialize=station_vars)
+
+    station_edges = [(e, i, j, d) for e in metroline.get_lines().get_id() for i in range(grid_size / square_size) for j in range(grid_size / square_size) for d in range(4)]
+    model.E = pyo.set(dim=4, initialize=station_edges)
+

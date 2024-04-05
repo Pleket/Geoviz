@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from step1 import line_station_map, df_exploded_unique, visitors
 from data_vars import line_colors
 from Station import Station
+from Line import Line
 
 # Compute a list of stations with their corresponding lines
 def get_station_data(line_station_map, df_exploded_unique):

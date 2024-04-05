@@ -13,7 +13,7 @@ def get_station_data(line_station_map, df_exploded_unique):
             else:
                 station_lines[st].append(line)
 
-    stations = []        
+    stations = []
     for st in station_lines:
         station_coords = df_exploded_unique[df_exploded_unique['NAME'] == st]
 
@@ -38,7 +38,7 @@ def get_line_data(line_station_map):
         metro_line = MetroLine(color)
         for i in range(len(stations) - 1):
             line = Line(color, stations[i], stations[i+1])
-            metro_line.add_station(line)
+            metro_line.add_line(line)
         lines.append(metro_line)
     
     # # Print populated lines and metro lines
@@ -52,4 +52,4 @@ def get_line_data(line_station_map):
 
 
 # get_station_data(line_station_map, df_exploded_unique)
-# get_line_data(line_station_map)
+get_line_data(line_station_map)

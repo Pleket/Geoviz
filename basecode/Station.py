@@ -5,6 +5,9 @@ class Station:
         self.y = y
         self.lines = []
     
+    def get_name(self):
+        return self.name
+    
     def add_line(self, line):
         self.lines.append(line)
     
