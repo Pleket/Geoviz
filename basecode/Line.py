@@ -2,7 +2,7 @@ class MetroLine:
     def __init__(self, color):
         self.color = color
         self.lines = []
-        self.turns= []
+        self.turns = []
         self.i = 0
     
     def add_line(self, line):
