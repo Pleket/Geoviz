@@ -1,5 +1,8 @@
 from enum import Enum
 import pyomo as pyo
+import matplotlib.pyplot as plt
+from data_vars_oop import get_line_data
+from data_vars import line_station_map
 
 
 def snap_grid(bounding_box, square_size, metroline):
@@ -83,3 +86,20 @@ def define_ILP(grid_size, square_size, metroline):
     station_edges = [(e, i, j, d) for e in metroline.get_lines().get_id() for i in range(grid_size / square_size) for j in range(grid_size / square_size) for d in range(4)]
     model.E = pyo.set(dim=4, initialize=station_edges)
 
+
+
+coords = []
+metrolines = get_line_data(line_station_map)
+metroline = snap_grid(300, 10, metrolines[0])
+
+lines = metroline.get_lines()
+for i in range(lines):
+    line_coords = lines[i].get_coords()
+    for coord in line_coords:
+        coords.append(coord)
+
+x = [coord[0] for coord in coords]
+y = [coord[1] for coord in coords]
+
+plt.plot(x, y, '-o')
+plt.show()
