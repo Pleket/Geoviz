@@ -19,3 +19,7 @@ class Station:
     
     def get_coordinates(self):
         return (self.x, self.y)
+    
+    def set_coordinates(self, x, y):
+        self.x = x
+        self.y = y
