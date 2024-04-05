@@ -88,6 +88,48 @@ df_exploded_unique = df_exploded_cleaned.drop_duplicates(subset=['LINE', 'Longit
 df_exploded_unique.to_csv('visitors_Metrostations.csv', index=False)
 
 
+df_exploded_unique['NAME'] = df_exploded_unique['NAME'].str.replace(' ELEVATOR', '')
+df_exploded_unique['NAME'] = df_exploded_unique['NAME'].str.replace('JUDICIARY SQUARE NE', 'JUDICIARY SQUARE')
+
+# Set display options to show all rows
+pd.set_option('display.max_rows', None)
+
+# Print all names
+print(df_exploded_unique['NAME'])
+
+# Reset display options to default
+pd.reset_option('display.max_rows')
+
+counter_in = 0
+counter_out = 0
+from data_vars import line_station_map
+for color, stations in line_station_map.items():
+    for station in stations:
+        if station in df_exploded_unique['NAME'].values:
+            counter_in += 1
+        else:
+            counter_out += 1
+            print("Was not matched: ", station)
+print(counter_in, "Stations in data_vars lists are found in the df with coord")
+print( counter_out, "Stations in data_vars lists that are NOT in the df with coord")
+
+counter_in = 0
+counter_out = 0
+from data_vars import line_station_map
+for station in df_exploded_unique['NAME'].values:
+    matched = False
+    for color, stations in line_station_map.items():
+        if station in stations:
+            counter_in += 1
+            matched = True
+            break
+    if not matched:
+        counter_out += 1
+        print("Was not matched:", station)
+print(counter_in, "Stations in df with coord are found in the data_vars lists")
+print( counter_out, "Stations in df with coord are NOT found in the data_vars lists")
+        
+
 # Load data from CSV
 data = pd.read_csv("visitors_Metrostations.csv")
 data['geometry'] = data.apply(lambda row: Point(row['Longitude'], row['Latitude']), axis=1)
