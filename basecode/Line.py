@@ -2,6 +2,7 @@ class MetroLine:
     def __init__(self, color):
         self.color = color
         self.lines = []
+        self.turns= []
     
     def add_station(self, line):
         self.lines.append(line)
@@ -13,7 +14,13 @@ class MetroLine:
         return self.lines
     
     def get_color(self):
-        return self.color
+        return self.color   
+
+    def get_turns(self):
+        turns = []
+        for i in self.lines:
+            turns.append(i.get_turns())
+        return turns
 
 class Line:
     def __init__(self, color, station1, station2):
@@ -37,3 +44,13 @@ class Line:
     
     def get_stations(self):
         return (self.station1, self.station2)
+    
+    def get_color(self):
+        return self.color  
+    
+    def get_turns(self):
+        turns = []
+        for i in range(len(self.coords)-2):
+            if (self.coords[i+1][1]-self.coords[i][1])/((self.coords[i+1][0]-self.coords[i][0])) != (self.coords[i+2][1]-self.coords[i+1][1])/((self.coords[i+2][0]-self.coords[i+1][0])):
+                turns.append(i)
+        return turns
