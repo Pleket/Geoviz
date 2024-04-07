@@ -99,3 +99,21 @@ def define_ILP(grid_size, square_size, metroline):
     station_edges = [(e, i, j, d) for e in metroline.get_lines().get_id() for i in range(grid_size / square_size) for j in range(grid_size / square_size) for d in range(4)]
     model.E = pyo.set(dim=4, initialize=station_edges)
 
+
+
+coords = []
+metrolines = get_line_data(line_station_map)
+
+for metroline in metrolines:
+    metroline = snap_grid(300, 0.1, metroline, 10)
+    lines = metroline.get_lines()
+    for i in range(len(lines)):
+        line_coords = lines[i].get_coords()
+        for coord in line_coords:
+            coords.append(coord)
+
+x = [coord[0] for coord in coords]
+y = [coord[1] for coord in coords]
+
+plt.plot(x, y, '-o')
+plt.show()
